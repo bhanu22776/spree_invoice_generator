@@ -7,7 +7,7 @@
   #Logo company
   ##################################
              pdf.font "Helvetica"
-             pdf.image "#{Rails.root.to_s}/app/assets/images/#{Spree::PrintInvoiceConfig[:print_invoice_logo_path]}" ,width:180 ,height:100
+             pdf.image "#{Rails.root.to_s}/app/assets/images/#{Spree::InvoiceGeneratorConfig[:print_invoice_logo_path]}" ,width:180 ,height:100
 
              pdf.move_up 90
 

@@ -3,13 +3,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_invoice_generator'
   s.version     = '2.0.1'
-  s.summary     = ''
-  s.description = ''
+  s.summary     = 'spree invoice generation'
+  s.description = 'Invoice'
   s.required_ruby_version = '>= 1.9.3'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  s.author    = 'bhanuprasadmende'
+  s.email     = 'bhanuprasadmende@gmail.com'
+  s.homepage  = 'http://bhanu22776.github.io/spree_invoice_generator/'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")

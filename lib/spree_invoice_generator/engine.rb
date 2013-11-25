@@ -10,6 +10,16 @@ module SpreeInvoiceGenerator
     config.generators do |g|
       g.test_framework :rspec
     end
+     #Added initializer for company information preferences
+    initializer "spree.spree_invoice_generator.preferences", :after => "spree.environment" do |app|
+      Spree::Company::Config = Spree::CompanyConfiguration.new
+      Spree::InvoiceGeneratorConfig = Spree::InvoiceGeneratorConfiguration.new
+    end
+
+
+    initializer "spree.spree_invoice_generator.mimetypes" do |app|
+      Mime::Type.register('application/pdf', :pdf) unless Mime::Type.lookup_by_extension(:pdf)
+    end
 
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
