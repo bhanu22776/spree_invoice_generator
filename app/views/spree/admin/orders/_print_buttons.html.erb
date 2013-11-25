@@ -1,0 +1,10 @@
+<% if @order and @order.completed_at? %>
+  <% buttons = Spree::PrintInvoiceConfig[:print_buttons]
+     buttons = buttons.split(",").collect{|b| b.strip } %>
+  <%  buttons.each do |button| %>
+   <%= button_link_to(Spree.t(button.to_s + "_print"), spree.order_path(@order, :pdf )) %>
+    
+
+  <% end %>
+<% end %>  
+

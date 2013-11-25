@@ -1,0 +1,8 @@
+<!--insert_after "div.billing"  -->
+<div data-hook="billing_inner">
+
+<p class="field" id=<%="#{address_id}vat_number" %>>
+      <%= form.label :vat_number, Spree.t(:vat_number) %><br />
+      <%= form.text_field :vat_number %>
+    </p>
+</div>

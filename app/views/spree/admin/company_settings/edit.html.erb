@@ -1,0 +1,109 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+    <%= Spree.t('company.company_settings') %>
+<% end %>
+
+<%= form_tag(admin_company_settings_path, :method => :put) do |f| -%>
+
+    <fieldset class="no-border-top">
+        
+         <h3>Company Details</h3>
+         <hr>
+         <br>
+      <div data-hook="admin_company_settings" class="row">
+
+        <div data-hook="company_name" class="field">
+          <label><%= Spree.t('company.company_name') %></label><br>
+          <%= text_field_tag('preferences[company_name]', Spree::Company::Config[:company_name], :size => 40) %>
+        </div>
+
+
+        <div data-hook="company_slogan" class="field">
+          <label><%= Spree.t('company.company_slogan') %></label><br>
+          <%= text_field_tag('preferences[company_slogan]', Spree::Company::Config[:company_slogan], :size => 40) %>
+        </div>
+
+        <div data-hook="company_address_number" class="field">
+          <label><%= Spree.t('company.company_address_number') %></label><br>
+          <%= text_field_tag('preferences[company_address_number]', Spree::Company::Config[:company_address_number], :size => 40) %>
+        </div>
+
+        <div data-hook="company_street" class="field">
+          <label><%= Spree.t('company.company_street') %></label><br>
+          <%= text_field_tag('preferences[company_street]', Spree::Company::Config[:company_street], :size => 40) %>
+        </div>
+
+        <div data-hook="company_city" class="field">
+          <label><%= Spree.t('company.company_city') %></label><br>
+          <%= text_field_tag('preferences[company_city]', Spree::Company::Config[:company_city], :size => 40) %>
+        </div>
+
+        <div data-hook="company_zip" class="field">
+          <label><%= Spree.t('company.company_zip') %></label><br>
+          <%= text_field_tag('preferences[company_zip]', Spree::Company::Config[:company_zip], :size => 40) %>
+        </div>
+
+        <div data-hook="company_phone" class="field">
+          <label><%= Spree.t('company.company_phone') %></label><br>
+          <%= text_field_tag('preferences[company_phone]', Spree::Company::Config[:company_phone], :size => 40) %>
+        </div>
+
+        <div data-hook="company_fax" class="field">
+          <label><%= Spree.t('company.company_fax') %></label><br>
+          <%= text_field_tag('preferences[company_fax]', Spree::Company::Config[:company_fax], :size => 40) %>
+        </div>
+
+        <div data-hook="company_email" class="field">
+          <label><%= Spree.t('company.company_email') %></label><br>
+          <%= text_field_tag('preferences[company_email]', Spree::Company::Config[:company_email], :size => 40) %>
+        </div>
+
+
+        <div data-hook="company_website" class="field">
+          <label><%= Spree.t('company.company_website') %></label><br>
+          <%= text_field_tag('preferences[company_website]', Spree::Company::Config[:company_website], :size => 40) %>
+        </div>
+
+        <div data-hook="company_vatnumber" class="field">
+          <label><%= Spree.t('company.company_vatnumber') %></label><br>
+          <%= text_field_tag('preferences[company_vatnumber]', Spree::Company::Config[:company_vatnumber], :size => 40) %>
+        </div>
+
+         <br>
+         <h3>Company Bank Account Details</h3>
+         <hr>
+        <div data-hook="company_beneficiary" class="field">
+          <label>Name of the Beneficiary</label><br>
+          <%= text_field_tag('preferences[company_beneficiary]', Spree::Company::Config[:company_beneficiary], :size => 40) %>
+        </div>
+
+        <div data-hook="company_bankname" class="field">
+          <label>Name of the Bank </label><br>
+          <%= text_field_tag('preferences[company_bankname]', Spree::Company::Config[:company_bankname], :size => 40) %>
+        </div>
+       
+       <div data-hook="company_branchname" class="field">
+          <label>Bank Branch</label><br>
+          <%= text_field_tag('preferences[company_branchname]', Spree::Company::Config[:company_branchname], :size => 40) %>
+        </div>
+       <div data-hook="company_account_number" class="field">
+          <label>Bank Account Number</label><br>
+          <%= text_field_tag('preferences[company_account_number]', Spree::Company::Config[:company_account_number], :size => 40) %>
+        </div>
+       <div data-hook="company_rtgscode" class="field">
+          <label> BANK RTGS CODE</label><br>
+          <%= text_field_tag('preferences[company_rtgscode]', Spree::Company::Config[:company_rtgscode], :size => 40) %>
+        </div>
+
+
+
+      </div>
+
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= button Spree.t(:update), 'icon-refresh' %>
+      </div>
+
+    </fieldset>
+
+<% end -%>

@@ -1,0 +1,10 @@
+<!-- replace '[data-hook=signup_below_password_fields]'  -->
+<div data-hook="signup_below_password_fields">
+
+  <p>
+    <%= f.label :language, Spree.t(:language) %><br>
+    <%= f.select :language, [:fr, :nl, :de,:en], {:include_blank => false} %>
+  </p>
+
+
+</div>
