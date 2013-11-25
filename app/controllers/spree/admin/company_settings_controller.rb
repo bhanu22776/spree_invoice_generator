@@ -2,7 +2,7 @@ module Spree
   module Admin
     class CompanySettingsController < BaseController
       def update
-        Spree::Company::Config.set(params[:preferences])
+        Spree::CompanyConfig.set(params[:preferences])
 
         respond_to do |format|
           format.html {

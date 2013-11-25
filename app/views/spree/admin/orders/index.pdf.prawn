@@ -14,7 +14,7 @@ pdf.font_size 12
 
 #Logo company
 ##################################################
-     logo_path = "#{Rails.root.to_s}/app/assets/images/#{Spree::PrintInvoiceConfig[:print_invoice_logo_path]}"
+     logo_path = "#{Rails.root.to_s}/app/assets/images/#{Spree::InvoiceGeneratorConfig[:print_invoice_logo_path]}"
      pdf.image logo_path, :width => 150, :height => 35, :position => :left
      pdf.text "Invoice", :size => 30,:style => :bold, :align => :right ,:position => :right
 

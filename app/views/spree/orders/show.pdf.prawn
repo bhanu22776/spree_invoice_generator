@@ -16,15 +16,15 @@
   y_position = pdf.cursor - 10
   pdf.bounding_box([300, y_position], width: 300, height: 80) do
   pdf.transparent(0.0) { pdf.stroke_bounds }
-             pdf.text "Admin Off : #{Spree::Company::Config.company_address_number}," 
-             pdf.text "#{Spree::Company::Config.company_street}, #{Spree::Company::Config.company_city} - #{Spree::Company::Config.company_zip}."
-             pdf.text "Contact : #{Spree::Company::Config.company_phone}"
-             pdf.text "Email : #{Spree::Company::Config.company_email}"
-             pdf.text "Website : #{Spree::Company::Config.company_website}"
+             pdf.text "Admin Off : #{Spree::CompanyConfig.company_address_number}," 
+             pdf.text "#{Spree::CompanyConfig.company_street}, #{Spree::CompanyConfig.company_city} - #{Spree::CompanyConfig.company_zip}."
+             pdf.text "Contact : #{Spree::CompanyConfig.company_phone}"
+             pdf.text "Email : #{Spree::CompanyConfig.company_email}"
+             pdf.text "Website : #{Spree::CompanyConfig.company_website}"
 
    pdf.move_down 10
    
-             #pdf.text " VAT Number : #{Spree::Company::Config.company_vatnumber}"
+             #pdf.text " VAT Number : #{Spree::CompanyConfig.company_vatnumber}"
 end
              pdf.text "Purchase Proforma",size: 25  ,style: :bold ,align:  :center
              #pdf.stroke_horizontal_rule
@@ -34,8 +34,8 @@ end
   #Company Name && Company Slogan
   ##################################
 
- # pdf.text "#{Spree::Company::Config.company_name}",style: :bold,size: 20
- # pdf.text "#{Spree::Company::Config.company_slogan} "
+ # pdf.text "#{Spree::CompanyConfig.company_name}",style: :bold,size: 20
+ # pdf.text "#{Spree::CompanyConfig.company_slogan} "
 
  # pdf.move_down 10
 
@@ -47,12 +47,12 @@ end
   #pdf.transparent(0.0) { pdf.stroke_bounds }
   # pdf.text "Company Address",style: :bold
   # pdf.move_down 5
-  #     pdf.text "#{Spree::Company::Config.company_address_number}" 
-  #     pdf.text "#{Spree::Company::Config.company_street}"
-  #     pdf.text "#{Spree::Company::Config.company_city} - #{Spree::Company::Config.company_zip}        "
-  #     pdf.text "Contact : #{Spree::Company::Config.company_phone}"
-  #     pdf.text "#{Spree::Company::Config.company_website}  #{Spree::Company::Config.company_email}"
-  #     pdf.text " VAT Number : #{Spree::Company::Config.company_vatnumber}"
+  #     pdf.text "#{Spree::CompanyConfig.company_address_number}" 
+  #     pdf.text "#{Spree::CompanyConfig.company_street}"
+  #     pdf.text "#{Spree::CompanyConfig.company_city} - #{Spree::CompanyConfig.company_zip}        "
+  #     pdf.text "Contact : #{Spree::CompanyConfig.company_phone}"
+  #     pdf.text "#{Spree::CompanyConfig.company_website}  #{Spree::CompanyConfig.company_email}"
+  #     pdf.text " VAT Number : #{Spree::CompanyConfig.company_vatnumber}"
   #end
 
   #Invoice Details
@@ -69,11 +69,11 @@ end
  
   #  pdf.text "Payment Particulars"
   # pdf.move_down 5
-  #  pdf.text  "Name of the Beneficiary : #{Spree::Company::Config.company_beneficiary}"
-  #  pdf.text "Name of the Bank : #{Spree::Company::Config.company_bankname}"
-  #  pdf.text "Bank Branch  : #{Spree::Company::Config.company_branchname}"
-  #  pdf.text "Bank Account Number : #{Spree::Company::Config.company_account_number}"
-  #  pdf.text "BANK RTGS CODE :  #{Spree::Company::Config.company_rtgscode}"
+  #  pdf.text  "Name of the Beneficiary : #{Spree::CompanyConfig.company_beneficiary}"
+  #  pdf.text "Name of the Bank : #{Spree::CompanyConfig.company_bankname}"
+  #  pdf.text "Bank Branch  : #{Spree::CompanyConfig.company_branchname}"
+  #  pdf.text "Bank Account Number : #{Spree::CompanyConfig.company_account_number}"
+  #  pdf.text "BANK RTGS CODE :  #{Spree::CompanyConfig.company_rtgscode}"
 
  # end
 
@@ -165,15 +165,15 @@ end
     pdf.move_down 10
     pdf.text "OUR RTGS DETAILS:", style: :bold,size:15
     pdf.move_down 5
-    pdf.text  "NAME : #{Spree::Company::Config.company_beneficiary}" 
+    pdf.text  "NAME : #{Spree::CompanyConfig.company_beneficiary}" 
     pdf.move_down 5 
-    pdf.text "BANK NAME : #{Spree::Company::Config.company_bankname}"
+    pdf.text "BANK NAME : #{Spree::CompanyConfig.company_bankname}"
     pdf.move_down 5
-    pdf.text "BRANCH : #{Spree::Company::Config.company_branchname}"
+    pdf.text "BRANCH : #{Spree::CompanyConfig.company_branchname}"
     pdf.move_down 5
-    pdf.text "ACCOUNT NUMBER : #{Spree::Company::Config.company_account_number}"
+    pdf.text "ACCOUNT NUMBER : #{Spree::CompanyConfig.company_account_number}"
     pdf.move_down 5
-    pdf.text "RTGS CODE :  #{Spree::Company::Config.company_rtgscode}"
+    pdf.text "RTGS CODE :  #{Spree::CompanyConfig.company_rtgscode}"
 
   #  Footer
   ##############################################
@@ -195,7 +195,7 @@ end
     pdf.stroke_horizontal_rule
     pdf.move_down 5
     pdf.text "Payment made beyond due date shall be charged interest @ 24% per annum "
-    #pdf.text "Contact :: #{Spree::Company::Config.company_name},#{Spree::Company::Config.company_phone} or #{Spree::Company::Config.company_email}",style: :bold
+    #pdf.text "Contact :: #{Spree::CompanyConfig.company_name},#{Spree::CompanyConfig.company_phone} or #{Spree::CompanyConfig.company_email}",style: :bold
 
   #  PDF ENDS HERE
   ##############################################

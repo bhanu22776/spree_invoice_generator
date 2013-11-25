@@ -12,7 +12,7 @@ module SpreeInvoiceGenerator
     end
      #Added initializer for company information preferences
     initializer "spree.spree_invoice_generator.preferences", :after => "spree.environment" do |app|
-      Spree::Company::Config = Spree::CompanyConfiguration.new
+      Spree::CompanyConfig = Spree::CompanyConfiguration.new
       Spree::InvoiceGeneratorConfig = Spree::InvoiceGeneratorConfiguration.new
     end
 

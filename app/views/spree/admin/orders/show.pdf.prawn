@@ -3,7 +3,7 @@ require 'prawn'
 require 'prawn/layout'	       
 
 #Logo company
-pdf.image "#{Rails.root.to_s}/public/assets/#{Spree::PrintInvoiceConfig[:print_invoice_logo_path]}"
+pdf.image "#{Rails.root.to_s}/public/assets/#{Spree::InvoiceGeneratorConfig[:print_invoice_logo_path]}"
 pdf.stroke_horizontal_rule
 pdf.move_down 10
 
