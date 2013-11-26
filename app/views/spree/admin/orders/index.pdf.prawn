@@ -23,8 +23,8 @@ pdf.font_size 12
 
 #Company Name
 ##################################################
-        pdf.text "#{Spree::Company::Config.company_name}",:size => 20, :style => :bold
-        pdf.text " #{Spree::Company::Config.company_slogan}",:size => 13
+        pdf.text "#{Spree::CompanyConfig.company_name}",:size => 20, :style => :bold
+        pdf.text " #{Spree::CompanyConfig.company_slogan}",:size => 13
         pdf.move_down 10
 
 
@@ -33,11 +33,11 @@ pdf.font_size 12
 y_position = pdf.cursor - 10
 pdf.bounding_box([0, y_position], :width => 250, :height => 150) do
         pdf.transparent(0.0) { pdf.stroke_bounds }
-        pdf.text "#{Spree::Company::Config.company_street}      #{Spree::Company::Config.company_address_number}"
-        pdf.text "#{Spree::Company::Config.company_zip}        #{Spree::Company::Config.company_city}"
-        pdf.text "#{Spree::Company::Config.company_phone}     Fax : #{Spree::Company::Config.company_fax}"
-        pdf.text "#{Spree::Company::Config.company_website}  #{Spree::Company::Config.company_email}"
-        pdf.text " VAT Number : #{Spree::Company::Config.company_vatnumber}"
+        pdf.text "#{Spree::CompanyConfig.company_street}      #{Spree::CompanyConfig.company_address_number}"
+        pdf.text "#{Spree::CompanyConfig.company_zip}        #{Spree::CompanyConfig.company_city}"
+        pdf.text "#{Spree::CompanyConfig.company_phone}     Fax : #{Spree::CompanyConfig.company_fax}"
+        pdf.text "#{Spree::CompanyConfig.company_website}  #{Spree::CompanyConfig.company_email}"
+        pdf.text " VAT Number : #{Spree::CompanyConfig.company_vatnumber}"
 end
 
 #Invoice Information
@@ -47,8 +47,8 @@ end
         pdf.text "INVOICE DATE : #{(orders.created_at.to_date)}",:align => :right
         pdf.text "INVOICE NUMBER : #{(orders.number.to_s)}", :align => :right
         pdf.text "TRANSCTION DATE :#{(orders.updated_at.to_date)}", :align => :right
-        pdf.text "ACCOUNT : #{Spree::Company::Config.company_bannumber}" , align: :right
-        pdf.text "BIC : #{Spree::Company::Config.company_bicnumber}" ,align: :right
+    #   pdf.text "ACCOUNT : #{Spree::CompanyConfig.company_bannumber}" , align: :right
+    #   pdf.text "BIC : #{Spree::CompanyConfig.company_bicnumber}" ,align: :right
     end
 pdf.move_down 15
 
@@ -117,7 +117,7 @@ pdf.table([ ["Quantity", "Description", "Unit Price","Base Price","VAT%","VAT","
  pdf.stroke_horizontal_rule
  pdf.move_down 5
  pdf.text "Payment is due to within 30 days after invoice date.If you have any questions concering this invoice"
- pdf.text "Contact -- #{Spree::Company::Config.company_name} ,  #{Spree::Company::Config.company_phone} , or  #{Spree::Company::Config.company_email}"
+ pdf.text "Contact -- #{Spree::CompanyConfig.company_name} ,  #{Spree::CompanyConfig.company_phone} , or  #{Spree::CompanyConfig.company_email}"
 
   #Starting New Page
    pdf.start_new_page
